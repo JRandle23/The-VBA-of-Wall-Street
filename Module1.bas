@@ -50,8 +50,10 @@ For Each ws In Worksheets
             Yearly_Change = Yearly_End - Yearly_Start
             ws.Range("J" & Summary_Table_Row).Value = Yearly_Change
             
-            Percent_Change = Yearly_Change / Yearly_Start * 100
+            Percent_Change = Yearly_Change / Yearly_Start
             ws.Range("K" & Summary_Table_Row).Value = Percent_Change
+            ws.Range("K" & Summary_Table_Row).Style = "Percent"
+            
             
             End If
             
