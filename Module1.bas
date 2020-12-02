@@ -44,13 +44,13 @@ For Each ws In Worksheets
         
         If ws.Cells(x, 6).Value Or ws.Range("C" & Start_Row).Value <> 0 Then
             
-            Yearly_Open = ws.Cells(x, 3).Value
+            
             Yearly_End = ws.Cells(x, 6).Value
             Yearly_Start = ws.Range("C" & Start_Row).Value
             Yearly_Change = Yearly_End - Yearly_Start
             ws.Range("J" & Summary_Table_Row).Value = Yearly_Change
             
-            Percent_Change = Yearly_Change / Yearly_Start
+            Percent_Change = Yearly_Change / Yearly_Start * 100
             ws.Range("K" & Summary_Table_Row).Value = Percent_Change
             
             End If
